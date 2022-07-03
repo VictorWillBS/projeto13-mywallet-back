@@ -52,6 +52,7 @@ export async function loginUser(req,res){
     const userCadastrado = await db.collection("user").findOne({email})
     
     const userUltimoLogin = await db.collection("sessions").findOne({email})
+    console.log(userCadastrado)
     const token = await createToken(userUltimoLogin,time)
     // Verificação de Email
     if(!userCadastrado){
