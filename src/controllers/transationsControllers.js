@@ -49,7 +49,7 @@ export async function getTrasantion (req,res){
         const transactions = await db.collection("transactions").find({"id":id}).toArray()
         
         console.log(transactions)
-        res.status(200).send(transactions)
+        res.status(200).send([...transactions])
     } catch (error) {
         res.sendStatus(500)
     }
