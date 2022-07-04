@@ -18,6 +18,8 @@ app.post("/sign-in",loginUser)
 app.post("/transactions", createTrasantion)
 app.get("/transactions", getTrasantion)
 
+
+
 app.listen(5000,()=>{
     console.log(chalk.green("Servidor Funcionando"))
 })

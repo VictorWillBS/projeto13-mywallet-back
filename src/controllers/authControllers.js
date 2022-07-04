@@ -74,7 +74,7 @@ export async function loginUser(req,res){
 
     try {
         await db.collection("sessions").insertOne({"email":userCadastrado.email, token,time, "id":userCadastrado._id})
-        res.status(201).send({token,id:userCadastrado._id})
+        res.status(201).send({name:userCadastrado.name,token,id:userCadastrado._id})
         
     } catch (error) {
         res.sendStatus(500)
